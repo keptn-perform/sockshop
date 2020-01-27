@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.sockshop-hardening.35.224.9.95.xip.io
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts-canary.sockshop-hardening.svc.cluster.local
+    - destination:
+        host: carts-primary.sockshop-hardening.svc.cluster.local
+      weight: 100
