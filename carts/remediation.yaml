@@ -3,3 +3,4 @@ remediations:
   actions:
     - action: featuretoggle
       value: EnablePromotion:off
+      
