@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "10"
+    deployment.kubernetes.io/revision: "11"
   creationTimestamp: "2020-01-27T20:15:51Z"
-  generation: 23
+  generation: 25
   name: carts-primary
-  resourceVersion: "2786954"
+  resourceVersion: "2799349"
   selfLink: /apis/apps/v1/namespaces/sockshop-production/deployments/carts
   uid: d0775bc0-4141-11ea-8f59-42010a8000c9
 spec:
@@ -43,7 +43,7 @@ spec:
               apiVersion: v1
               fieldPath: metadata.labels['deployment']
         - name: CONTAINER_IMAGE
-          value: docker.io/keptnexamples/carts:0.10.3
+          value: docker.io/keptnexamples/carts:0.10.1
         - name: KEPTN_PROJECT
           value: carts
         - name: KEPTN_STAGE
@@ -55,7 +55,7 @@ spec:
           value: carts
         - name: UNLEASH_SERVER_URL
           value: http://unleash.unleash-production/api
-        image: docker.io/keptnexamples/carts:0.10.3
+        image: docker.io/keptnexamples/carts:0.10.1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
